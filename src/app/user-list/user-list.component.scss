@@ -1,0 +1,198 @@
+:host {
+	display: block;
+}
+
+// Action Center
+
+// @import "../../../../web/css/sass_mixins.scss";
+// @import "../../../../web/css/sass_colors.scss";
+// @import "../../../../web/css/sass_metrics.scss";
+// @import "../../../../web/css/sass_fonts.scss";
+
+// // ACTION CENTER START HERE
+
+// #assigned-tasks-tab {
+// 	background-color: red !important;
+// }
+// #action-center-index {
+// 	.modal-content > .modal-body {
+// 		padding-top: 0;
+// 		form#task-form {
+// 			.create-task-container > div {
+// 				&:first-child {
+// 					margin-bottom: -15px;
+// 				}
+// 			}
+// 			.create-task-container {
+// 				&-name,
+// 				&-due-by,
+// 				&-follow-up {
+// 					padding-right: 15px;
+// 					@media screen and (max-width: 768px) {
+// 						padding-right: 0;
+// 					}
+// 				}
+// 				&-authorization,
+// 				&-claims-id {
+// 					margin-bottom: 0 !important;
+// 					margin-top: 10px;
+// 				}
+// 				&-upload-ids {
+// 					margin-bottom: -35px;
+// 				}
+// 				&-collapse {
+// 					.panel-heading {
+// 						@include bg-color($pure-white !important);
+// 						h4 {
+// 							@include bg-color($pure-white);
+// 							a {
+// 								@include font-size(14px);
+// 								padding: 0;
+// 								border: none;
+// 								@include bg-color($pure-white !important);
+// 								&:after {
+// 									right: unset;
+// 									left: 145px;
+// 									margin-top: -1px;
+// 								}
+// 								&.collapsed {
+// 									&:after {
+// 										background: url(../../../../images/chevron-down-solid-green.svg)
+// 											no-repeat !important;
+// 										left: 145px;
+// 									}
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+
+// 			#related-claims-grid {
+// 				.checkbox {
+// 					margin-top: -6px !important;
+// 				}
+// 			}
+
+// 			.select2-container {
+// 				.img-flag {
+// 					margin-right: 3px;
+// 				}
+
+// 				.select2-selection {
+// 					.select2-selection__arrow {
+// 						margin: 4px 0 0 0;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	#action-center-tabs {
+// 		#ul-action-center-tabs {
+// 			padding-top: 15px;
+// 			border-bottom: unset !important;
+// 			margin-bottom: -20px;
+// 			li {
+// 				&:nth-child(2) > a.kv-tab-loading {
+// 					z-index: 1000 !important;
+// 				}
+// 				a {
+// 					height: 38px;
+// 					@include border-radius(4px);
+// 					@include bg-color($light_gray);
+// 					border: none;
+// 					padding: 10px 15px;
+// 					&:first-child {
+// 						@include color($main-green-text);
+// 						@include font-size(14px);
+// 						.label {
+// 							padding: 2px 6px !important;
+// 							margin-left: 10px;
+// 						}
+// 					}
+// 					&:hover {
+// 						background: $gray_container_background !important;
+// 					}
+// 					&:active {
+// 						background: $gray_container_background !important;
+// 					}
+// 				}
+// 				&.active {
+// 					a {
+// 						@include bg-color($custom_button_background);
+// 					}
+// 				}
+// 			}
+// 		}
+// 		@media screen and (max-width: 992px) {
+// 			#action-center-tasks-grid {
+// 				min-height: 220px;
+// 			}
+// 		}
+// 		div.tab-content {
+// 			padding: 0;
+// 			.col-xs-12.col-lg-1 {
+// 				padding: 0 5px;
+// 			}
+
+// 			.grid-view {
+// 				table {
+// 					thead {
+// 						tr {
+// 							th {
+// 								&:first-child {
+// 									width: 1%;
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+
+// 		#assigned-tasks-tab {
+// 			.form-action-center {
+// 				.field-userassignedtasks-actioncenterfilter {
+// 					.common-filter-icon {
+// 						margin-top: 2px;
+// 						margin-left: -3px;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	#collapse-task-additional-info {
+// 		.scrollless-table {
+// 			overflow-y: scroll;
+// 			max-height: 200px;
+
+// 			&::-webkit-scrollbar {
+// 				width: 0;
+// 				background: transparent;
+// 			}
+
+// 			tbody {
+// 				tr {
+// 					td {
+// 						&:first-child {
+// 							padding: 4px 0 0 8px !important;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+
+// 		#related-tasks {
+// 			.control-label {
+// 				margin-top: 15px;
+// 			}
+// 		}
+// 	}
+// 	button#apply-bulk-action {
+// 		@media screen and (max-width: 962px) {
+// 			margin-bottom: 20px;
+// 		}
+// 	}
+// }
+// // ACTION CENTER END HERE

@@ -1,0 +1,11 @@
+<div id="container">
+	<div>
+		<input #userNameInput type="text">
+		<input #userAgeInput type="number">
+		<button (click)="addNewUser(userNameInput, userAgeInput)">Add New User</button>
+	</div>
+
+	<app-user-list-item *ngFor="let user of userArray" [user]="user">
+
+	</app-user-list-item>
+</div>
