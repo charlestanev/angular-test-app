@@ -23,7 +23,16 @@ export class AppComponent {
 		}
 	];
 	addNewUserHandler(newUser: IUser): void {
-		this.users.push(newUser);
+		// this.users.push(newUser);
+	}
+
+	constructor() {
+		setInterval(() => {
+			this.users.push({
+				name: 'Ivan -',
+				age: 100
+			})
+		}, 10000);
 	}
 
 	// buttonClickHandler(): void {
