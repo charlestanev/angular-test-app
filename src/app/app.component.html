@@ -1,14 +1,14 @@
 <!-- https://softuni.bg/trainings/resources/video/62709/video-13-july-2021-ilia-idakiev-angular-july-2021/3473 -->
-<!-- 1:43:30 -->
+<!-- 1:20:08 -->
 
 <div>HEADER</div>
 <hr>
 <hr><br>
 <div id="content">
-	<app-user-list [userArray]="users" (addUser)="addNewUserHandler($event)">
+	<app-user-list [userArray]="userService.users" (addUser)="addNewUserHandler($event)">
 
 	</app-user-list>
-	<div *ngIf="!users">Loading ....</div>
+	<!-- <div *ngIf="!users">Loading ....</div> -->
 </div>
 
 <br>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IUser } from './interfaces/user';
+import { UserService } from './user.service';
 
 @Component({
 	selector: 'app-root',
@@ -7,32 +8,8 @@ import { IUser } from './interfaces/user';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+	constructor(public userService: UserService) {
 
-	users = [
-		{
-			name: 'Ivan1',
-			age: 21
-		},
-		{
-			name: 'Ivan2',
-			age: 22
-		},
-		{
-			name: 'Ivan3',
-			age: 23
-		}
-	];
-	addNewUserHandler(newUser: IUser): void {
-		// this.users.push(newUser);
-	}
-
-	constructor() {
-		setInterval(() => {
-			this.users.push({
-				name: 'Ivan -',
-				age: 100
-			})
-		}, 10000);
 	}
 
 	// buttonClickHandler(): void {
