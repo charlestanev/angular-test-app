@@ -6,14 +6,19 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import { UserService } from './user.service';
 
+import { HttpClientModule } from '@angular/common/http';
+import { TimeComponent } from './time/time.component';
+
 @NgModule({
 	declarations: [
 		AppComponent,
 		UserListComponent,
-		UserListItemComponent
+		UserListItemComponent,
+		TimeComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		HttpClientModule
 	],
 	providers: [
 		{

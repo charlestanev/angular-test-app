@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { catchError, Subscriber } from 'rxjs';
 import { IUser } from './interfaces/user';
 import { UserService } from './user.service';
 
@@ -7,10 +8,40 @@ import { UserService } from './user.service';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-	constructor(public userService: UserService) {
+export class AppComponent implements OnInit {
+	users: IUser[] | undefined;
+	errorLoadingUsers = false;
 
+	constructor(public userService: UserService) { }
+
+	ngOnInit(): void {
+		this.loadUsers();
 	}
+
+	loadUsers(search?: string): void {
+		this.users = undefined;
+		this.errorLoadingUsers = false;
+		this.userService.loadUsers(search).pipe(
+			// catchError(() => of([]))
+		).subscribe(
+			users => this.users = users,// next function
+			error => {
+				console.error(error), // error fn
+					this.errorLoadingUsers = true;
+			},
+			() => console.log('Load users stram sompleted')
+		);
+	}
+
+	reloadButtonHandler() {
+		this.loadUsers();
+	}
+
+	searchButtonHandler(searchInput: HTMLInputElement): void {
+		const { value } = searchInput;
+		this.loadUsers(value);
+	}
+
 
 	// buttonClickHandler(): void {
 	// 	const current = this.title++;
