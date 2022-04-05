@@ -1,89 +1,116 @@
-#reports-collection-report {
-	background-color: lightgreen !important;
-	#collection-report-grid {
-		&-container {
-			overflow-x: auto;
-			& > table {
-				width: 160vw;
-				max-width: unset;
-				@media screen and (min-width: 1920px) {
-					width: 130vw;
-				}
-				@media screen and (min-width: 2560px) {
-					width: 80vw;
-				}
-				th,
-				td {
-					vertical-align: middle;
-					@include claims-management-guide-table;
-					&:nth-child(1) {
-						left: 0;
-						width: 14% !important;
-						@media screen and (min-width: 2560px) {
-							width: 17% !important;
-						}
-					}
-					&:nth-child(2) {
-						width: 4% !important;
-						left: 208px;
-						@media screen and (min-width: 1536px) {
-							left: 229px !important;
-						}
-						@media screen and (min-width: 1600px) {
-							left: 244px !important;
-						}
-					}
-					&:nth-child(6) {
-						min-width: 90px;
-					}
-					&:nth-child(8) {
-						min-width: 130px !important;
-					}
-					&:nth-child(9) {
-						min-width: 190px !important;
-					}
-					&:nth-child(10) {
-						min-width: 190px !important;
-					}
-				}
-			}
-		}
-		table {
-			td,
-			th {
-				vertical-align: middle;
-			}
-			th:last-child {
-				background-color: $main-green !important;
-			}
-			tr.kv-expand-detail-row > td {
-				padding: 0 !important;
-				.skip-export {
-					background-color: $gray_container_background !important;
-				}
-				div.alert {
-					margin-bottom: 0;
-				}
-			}
-			#claim-services-grid {
-				margin-bottom: -1px;
-				padding: 0 !important;
-				.summary {
-					margin: 0 !important;
-				}
-				@include inner-table-design;
-				table {
-					th {
-						background: #fafafa !important;
-						a {
-							margin-left: 0 !important;
-						}
-					}
-					td {
-						background-color: $gray_container_background !important;
-					}
-				}
-			}
-		}
-	}
+.hidden {
+	display: none;
 }
+
+// @media print {
+// 	.ui-draggable-handle div {
+// 		border: 4px solid blue;
+// 	}
+// 	#1_output {
+// 		position: relative;
+// 		border: 1px solid blueviolet;
+// 	}
+
+// 	img {
+// 		float: left;
+// 		border: 2px solid mediumvioletred;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 	}
+
+// 	img:last-child {
+// 		border: 10px solid #00ff00 !important;
+// 	}
+
+// 	#1_output > img:first-child {
+// 		border: 1px solid red;
+// 	}
+
+// 	#1_output > img:last-child {
+// 		border: 1px solid #00ffd4;
+// 	}
+// }
+// // --------------------------------------------------------------------------------------------------------------------------------------------------
+// <style type="text/css">
+// /*!
+//  * Fancy styles for pdf2htmlEX
+//  * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com>
+//  * https://github.com/pdf2htmlEX/pdf2htmlEX/blob/master/share/LICENSE
+// */
+// @keyframes fadein{
+// 	from{opacity:0}to{opacity:1}
+// }
+// @-webkit-keyframes fadein{
+// 	from{opacity:0}to{opacity:1}}
+// 	@keyframes swing{0{transform:rotate(0)}10%{transform:rotate(0)}90%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}
+// 	@-webkit-keyframes swing{0{-webkit-transform:rotate(0)}10%{-webkit-transform:rotate(0)}90%{-webkit-transform:rotate(720deg)}100%{-webkit-transform:rotate(720deg)}}
+// 	@media screen{
+// 	#sidebar{
+// 			background-color:#2f3236;
+// 			background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+")
+// 		}
+// 	#outline{font-family:Georgia,Times,"Times New Roman",serif;font-size:13px;margin:2em 1em}
+// 	#outline ul{padding:0}
+// 	#outline li{list-style-type:none;margin:1em 0}
+// 	#outline li>ul{margin-left:1em}
+
+// 	#outline a,
+// 	#outline a:visited,
+// 	#outline a:hover,
+// 	#outline a:active{line-height:1.2;color:#e8e8e8;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;display:block;overflow:hidden;outline:0}
+
+// 	#outline a:hover{color:#0cf}#page-container{background-color:#9e9e9e;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");
+// 		-webkit-transition:left 500ms;transition:left 500ms}
+// 		.pf{margin:13px auto;box-shadow:1px 1px 3px 1px #333;border-collapse:separate}
+// 		.pc.opened{-webkit-animation:fadein 100ms;animation:fadein 100ms}
+// 		.loading-indicator.active{-webkit-animation:swing 1.5s ease-in-out .01s infinite alternate none;animation:swing 1.5s ease-in-out .01s infinite alternate none}
+// 		.checked{background:no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goQDSYgDiGofgAAAslJREFUOMvtlM9LFGEYx7/vvOPM6ywuuyPFihWFBUsdNnA6KLIh+QPx4KWExULdHQ/9A9EfUodYmATDYg/iRewQzklFWxcEBcGgEplDkDtI6sw4PzrIbrOuedBb9MALD7zv+3m+z4/3Bf7bZS2bzQIAcrmcMDExcTeXy10DAFVVAQDksgFUVZ1ljD3yfd+0LOuFpmnvVVW9GHhkZAQcxwkNDQ2FSCQyRMgJxnVdy7KstKZpn7nwha6urqqfTqfPBAJAuVymlNLXoigOhfd5nmeiKL5TVTV+lmIKwAOA7u5u6Lped2BsbOwjY6yf4zgQQkAIAcedaPR9H67r3uYBQFEUFItFtLe332lpaVkUBOHK3t5eRtf1DwAwODiIubk5DA8PM8bYW1EU+wEgCIJqsCAIQAiB7/u253k2BQDDMJBKpa4mEon5eDx+UxAESJL0uK2t7XosFlvSdf0QAEmlUnlRFJ9Waho2Qghc1/U9z3uWz+eX+Wr+lL6SZfleEAQIggA8z6OpqSknimIvYyybSCReMsZ6TislhCAIAti2Dc/zejVNWwCAavN8339j27YbTg0AGGM3WltbP4WhlRWq6Q/btrs1TVsYHx+vNgqKoqBUKn2NRqPFxsbGJzzP05puUlpt0ukyOI6z7zjOwNTU1OLo6CgmJyf/gA3DgKIoWF1d/cIY24/FYgOU0pp0z/Ityzo8Pj5OTk9PbwHA+vp6zWghDC+VSiuRSOQgGo32UErJ38CO42wdHR09LBQK3zKZDDY2NupmFmF4R0cHVlZWlmRZ/iVJUn9FeWWcCCE4ODjYtG27Z2Zm5juAOmgdGAB2d3cBADs7O8uSJN2SZfl+WKlpmpumaT6Yn58vn/fs6XmbhmHMNjc3tzDGFI7jYJrm5vb29sDa2trPC/9aiqJUy5pOp4f6+vqeJ5PJBAB0dnZe/t8NBajx/z37Df5OGX8d13xzAAAAAElFTkSuQmCC)
+// 	}
+// }
+// </style>
+
+// <style type="text/css">
+// /*!
+//  * Base CSS for pdf2htmlEX
+//  * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com>
+//  * https://github.com/pdf2htmlEX/pdf2htmlEX/blob/master/share/LICENSE
+//  */
+//  #sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}
+//  #page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}
+//  @media screen{
+// 	 #sidebar.opened+#page-container{left:250px}
+// 	 #page-container{bottom:0;right:0;overflow:auto}
+// 	 .loading-indicator{display:none}
+// 	 .loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}
+// 	 .loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}
+// 	 @media print{@page{margin:0}
+// 	 html{margin:0}
+// 	 body{margin:0;-webkit-print-color-adjust:exact}
+// 	 #sidebar{display:none}
+// 	 #page-container{width:auto;height:auto;overflow:visible;background-color:transparent}
+// 	 .d{display:none}}
+// 	 .pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}
+// 	 .pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}
+// 	 .pc.opened{display:block}
+// 	 .bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}
+// 	 .bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{
+// 		 .pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){
+// 			 .pf{overflow:visible;border:1px solid #fff}
+// 			 .pc{overflow:visible}}}
+// 			 .c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}
+// 			 .t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}
+// 			 .t:after{content:''}
+// 			 .t:before{content:'';display:inline-block}
+// 			 .t span{position:relative;unicode-bidi:bidi-override}
+// 			 ._{display:inline-block;color:transparent;z-index:-1}
+// 			 ::selection{background:rgba(127,255,255,0.4)}
+// 			 ::-moz-selection{background:rgba(127,255,255,0.4)}
+// 			 .pi{display:none}
+// 			 .d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}
+// 			 .it{border:0;background-color:rgba(255,255,255,0.0)}
+// 			 .ir:hover{cursor:pointer}
+// 			 </style>
+// <
+
+// style type="text/css">
